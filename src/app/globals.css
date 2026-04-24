@@ -8,8 +8,15 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-display);
+
+  --color-surface: var(--surface);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,72 +56,97 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* Canvas */
+  --background: oklch(0.963 0.008 85);
+  --surface: oklch(0.945 0.01 85);
+  --foreground: oklch(0.16 0 0);
+
+  /* Cards & surfaces */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.16 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.16 0 0);
+
+  /* Primary = near-black (CTA) */
+  --primary: oklch(0.15 0 0);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+
+  /* Secondary = soft surface (outline-ish CTA) */
+  --secondary: oklch(0.97 0.004 85);
+  --secondary-foreground: oklch(0.16 0 0);
+
+  /* Muted = subtle backgrounds / meta text */
+  --muted: oklch(0.935 0.006 85);
+  --muted-foreground: oklch(0.48 0.005 260);
+
+  /* Accent = hover / chip surface */
+  --accent: oklch(0.935 0.006 85);
+  --accent-foreground: oklch(0.16 0 0);
+
+  /* Brand = BLUE (replaces Formix red) */
+  --brand: oklch(0.58 0.22 258);
+  --brand-foreground: oklch(0.985 0 0);
+  --brand-soft: oklch(0.94 0.04 258);
+
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
+  --border: oklch(0.88 0.006 85);
+  --input: oklch(0.88 0.006 85);
+  --ring: oklch(0.58 0.22 258);
+
+  --chart-1: oklch(0.58 0.22 258);
+  --chart-2: oklch(0.68 0.16 258);
+  --chart-3: oklch(0.5 0.18 265);
+  --chart-4: oklch(0.4 0.12 260);
+  --chart-5: oklch(0.3 0.08 260);
+
+  --radius: 0.75rem;
+
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.16 0 0);
+  --sidebar-primary: oklch(0.15 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-accent: oklch(0.935 0.006 85);
+  --sidebar-accent-foreground: oklch(0.16 0 0);
+  --sidebar-border: oklch(0.88 0.006 85);
+  --sidebar-ring: oklch(0.58 0.22 258);
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: oklch(0.15 0 0);
+  --surface: oklch(0.2 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.2 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.2 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.97 0 0);
+  --primary-foreground: oklch(0.15 0 0);
+  --secondary: oklch(0.24 0 0);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.24 0 0);
+  --muted-foreground: oklch(0.68 0 0);
+  --accent: oklch(0.24 0 0);
+  --accent-foreground: oklch(0.97 0 0);
+  --brand: oklch(0.68 0.2 258);
+  --brand-foreground: oklch(0.15 0 0);
+  --brand-soft: oklch(0.3 0.1 258);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --ring: oklch(0.68 0.2 258);
+  --chart-1: oklch(0.68 0.2 258);
+  --chart-2: oklch(0.58 0.22 258);
+  --chart-3: oklch(0.5 0.18 265);
+  --chart-4: oklch(0.4 0.12 260);
+  --chart-5: oklch(0.3 0.08 260);
+  --sidebar: oklch(0.2 0 0);
+  --sidebar-foreground: oklch(0.97 0 0);
+  --sidebar-primary: oklch(0.68 0.2 258);
+  --sidebar-primary-foreground: oklch(0.15 0 0);
+  --sidebar-accent: oklch(0.24 0 0);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-ring: oklch(0.68 0.2 258);
 }
 
 @layer base {
@@ -122,9 +154,38 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
   }
   html {
     @apply font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+/* Dotted pattern used on brand circle (nods to Formix) */
+@layer utilities {
+  .bg-dot-pattern {
+    background-image: radial-gradient(
+      currentColor 1px,
+      transparent 1.2px
+    );
+    background-size: 8px 8px;
+  }
+  .rail-border {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--border) 0,
+      var(--border) 4px,
+      transparent 4px,
+      transparent 10px
+    );
+    background-repeat: repeat-y;
+    background-size: 1px 100%;
   }
 }
