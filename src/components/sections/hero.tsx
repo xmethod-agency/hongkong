@@ -1,6 +1,6 @@
-import { Star } from "lucide-react";
 import { PillButton } from "@/components/pill-button";
 import { SplitReveal } from "@/components/animated/split-reveal";
+import { TrustedBy } from "@/components/trusted-by";
 
 export function Hero() {
   return (
@@ -33,32 +33,12 @@ export function Hero() {
           </PillButton>
         </div>
 
-        <div className="mt-12 flex items-center gap-4">
-          <div className="flex -space-x-3">
-            {["bg-brand", "bg-foreground", "bg-muted-foreground"].map(
-              (bg, i) => (
-                <span
-                  key={i}
-                  className={`size-10 rounded-full ring-2 ring-background ${bg}`}
-                  aria-hidden
-                />
-              ),
-            )}
-          </div>
-          <div className="space-y-1">
-            <div className="flex items-center gap-1 text-brand">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="size-4 fill-current" />
-              ))}
-            </div>
-            <p className="text-sm font-medium text-foreground">
-              Trusted by teams across APAC
-            </p>
-            <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              Built to ship, built to scale.
-            </p>
-          </div>
-        </div>
+        <TrustedBy
+          className="mt-12"
+          withStars
+          title="Trusted by teams across APAC"
+          subtitle="Built to ship, built to scale."
+        />
       </div>
     </section>
   );

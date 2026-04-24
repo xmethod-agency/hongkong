@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import { SectionLabel } from "@/components/ui/section-label";
 import { SplitReveal } from "@/components/animated/split-reveal";
 import { PillButton } from "@/components/pill-button";
@@ -36,20 +36,6 @@ export function Contact() {
                   <div className="mt-1 font-medium">hello@aiqotech.com</div>
                 </div>
               </a>
-              <a
-                href="tel:+85200000000"
-                className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4 transition-colors hover:border-foreground/20"
-              >
-                <span className="flex size-11 items-center justify-center rounded-full bg-muted text-brand">
-                  <Phone className="size-5" />
-                </span>
-                <div>
-                  <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    / Call us
-                  </div>
-                  <div className="mt-1 font-medium">+852 0000 0000</div>
-                </div>
-              </a>
             </div>
           </div>
 
@@ -82,7 +68,7 @@ export function Contact() {
                 id="message"
                 rows={8}
                 placeholder="What are you building?"
-                className="min-h-[200px] rounded-2xl px-4 py-3 text-base"
+                className="min-h-[200px] resize-none rounded-2xl px-4 py-3 text-base"
               />
             </div>
 

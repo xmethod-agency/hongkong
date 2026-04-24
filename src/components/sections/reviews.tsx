@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
-import { PillButton } from "@/components/pill-button";
 import { SectionLabel } from "@/components/ui/section-label";
 import { SplitReveal } from "@/components/animated/split-reveal";
+import { TrustedBy } from "@/components/trusted-by";
 
 const reviews = [
   {
@@ -59,33 +59,7 @@ export function Reviews() {
                 projects.
               </p>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="flex -space-x-3">
-                {["bg-brand", "bg-background", "bg-muted-foreground"].map(
-                  (bg, i) => (
-                    <span
-                      key={i}
-                      className={`size-10 rounded-full ring-2 ring-foreground ${bg}`}
-                      aria-hidden
-                    />
-                  ),
-                )}
-              </div>
-              <div>
-                <p className="text-sm font-medium">Trusted by growing teams</p>
-                <p className="text-xs uppercase tracking-[0.18em] text-background/60">
-                  They shipped — you&apos;re next.
-                </p>
-              </div>
-            </div>
-            <PillButton
-              href="#contact"
-              size="md"
-              variant="outline"
-              className="bg-background text-foreground hover:bg-background/90"
-            >
-              Leave a review
-            </PillButton>
+            <TrustedBy theme="dark" />
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">

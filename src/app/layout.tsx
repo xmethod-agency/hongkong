@@ -4,6 +4,7 @@ import "./globals.css";
 import { CursorDot } from "@/components/cursor-dot";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { SideRails } from "@/components/layout/side-rails";
+import { BottomBlur } from "@/components/layout/bottom-blur";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -43,6 +44,7 @@ export default function RootLayout({
         <CursorDot />
         <SideRails />
         {children}
+        <BottomBlur />
       </body>
     </html>
   );
