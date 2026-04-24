@@ -1,6 +1,7 @@
 import { Code2, Globe, Lightbulb, Sparkles, ArrowUpRight } from "lucide-react";
 import { SectionLabel } from "@/components/ui/section-label";
 import { Card } from "@/components/ui/card";
+import { SplitReveal } from "@/components/animated/split-reveal";
 
 const services = [
   {
@@ -40,7 +41,7 @@ export function Services() {
         <SectionLabel>Services</SectionLabel>
         <div className="mt-5 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <h2 className="font-display text-4xl font-bold tracking-tight md:text-6xl">
-            What we do.
+            <SplitReveal text="What we do." />
           </h2>
           <p className="max-w-md text-muted-foreground">
             Strategy, speed, and engineering — working together to deliver

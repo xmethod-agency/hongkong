@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { PillButton } from "@/components/pill-button";
+import { SplitReveal } from "@/components/animated/split-reveal";
 
 export function Hero() {
   return (
@@ -13,7 +14,13 @@ export function Hero() {
         </span>
 
         <h1 className="mt-8 max-w-5xl font-display text-[56px] font-bold leading-[0.95] tracking-[-0.035em] text-foreground md:text-[96px] lg:text-[120px]">
-          Software, websites, and <span className="text-muted-foreground">AI for growing teams.</span>
+          <SplitReveal text="Software, websites, and " stagger={18} />
+          <SplitReveal
+            text="AI for growing teams."
+            stagger={18}
+            delay={240}
+            className="text-muted-foreground"
+          />
         </h1>
 
         <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">

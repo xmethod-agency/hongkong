@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { SectionLabel } from "@/components/ui/section-label";
+import { SplitReveal } from "@/components/animated/split-reveal";
 
 type Project = {
   title: string;
@@ -48,7 +49,7 @@ export function Work() {
         <SectionLabel>Work</SectionLabel>
         <div className="mt-5 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <h2 className="font-display text-4xl font-bold tracking-tight md:text-6xl">
-            Selected work.
+            <SplitReveal text="Selected work." />
           </h2>
           <p className="max-w-md text-muted-foreground">
             A snapshot of teams we&apos;ve partnered with and the outcomes we

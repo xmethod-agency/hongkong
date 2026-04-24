@@ -17,15 +17,15 @@ export function SiteHeader() {
         <Link
           href="#home"
           aria-label="AIQO — home"
-          className="inline-flex items-center text-foreground"
+          className="inline-flex h-10 items-center rounded-full bg-background/30 px-3 text-foreground backdrop-blur-[2px] supports-[backdrop-filter]:bg-background/20"
         >
           <Image
             src="/images/AIQO.svg"
             alt="AIQO"
             width={120}
-            height={28}
+            height={24}
             priority
-            className="h-5 w-auto md:h-7"
+            className="h-4 w-auto md:h-5"
           />
         </Link>
 

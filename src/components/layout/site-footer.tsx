@@ -77,7 +77,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 border-t border-border pt-10">
-          <div className="grid gap-6 text-sm text-muted-foreground md:grid-cols-3">
+          <div className="grid gap-6 text-sm text-muted-foreground md:grid-cols-2">
             <div>
               <div className="text-xs uppercase tracking-[0.18em] text-foreground/80">
                 / Company
@@ -110,16 +110,6 @@ export function SiteFooter() {
                 </a>
               </p>
             </div>
-            <div>
-              <div className="text-xs uppercase tracking-[0.18em] text-foreground/80">
-                / Legal
-              </div>
-              <p className="mt-3 leading-relaxed">
-                © {new Date().getFullYear()} AIQO. All rights reserved.
-                <br />
-                All trademarks belong to their owners.
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -127,7 +117,7 @@ export function SiteFooter() {
       <div className="relative w-full overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none block select-none whitespace-nowrap px-[2vw] font-display font-bold leading-[0.85] tracking-[-0.04em] text-foreground"
+          className="pointer-events-none block select-none whitespace-nowrap text-center font-display font-bold leading-[0.85] tracking-[-0.04em] text-foreground"
           style={{ fontSize: "clamp(3rem, 17.5vw, 20rem)" }}
         >
           <span className="text-brand">AI</span>QO TECH

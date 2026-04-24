@@ -1,5 +1,6 @@
 import { Mail, Phone } from "lucide-react";
 import { SectionLabel } from "@/components/ui/section-label";
+import { SplitReveal } from "@/components/animated/split-reveal";
 import { PillButton } from "@/components/pill-button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,7 +14,7 @@ export function Contact() {
         <div className="mt-5 grid gap-10 md:grid-cols-[1fr_1.2fr]">
           <div>
             <h2 className="font-display text-4xl font-bold tracking-tight md:text-6xl">
-              Let&apos;s talk.
+              <SplitReveal text={"Let's talk."} />
             </h2>
             <p className="mt-4 max-w-md text-muted-foreground">
               Got a project in mind or just exploring? Tell us what you&apos;re

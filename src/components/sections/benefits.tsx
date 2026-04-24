@@ -7,6 +7,7 @@ import {
   Puzzle,
 } from "lucide-react";
 import { SectionLabel } from "@/components/ui/section-label";
+import { SplitReveal } from "@/components/animated/split-reveal";
 
 const benefits = [
   {
@@ -48,7 +49,7 @@ export function Benefits() {
         <SectionLabel>Benefits</SectionLabel>
         <div className="mt-5 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <h2 className="font-display text-4xl font-bold tracking-tight md:text-6xl">
-            Why teams pick us.
+            <SplitReveal text="Why teams pick us." />
           </h2>
           <p className="max-w-md text-muted-foreground">
             A flat monthly rate, senior talent, and a process that keeps your

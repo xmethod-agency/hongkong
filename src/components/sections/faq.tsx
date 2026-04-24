@@ -1,4 +1,5 @@
 import { SectionLabel } from "@/components/ui/section-label";
+import { SplitReveal } from "@/components/animated/split-reveal";
 import {
   Accordion,
   AccordionContent,
@@ -41,7 +42,7 @@ export function Faq() {
         <div className="mt-5 grid gap-10 md:grid-cols-[1fr_2fr]">
           <div>
             <h2 className="font-display text-4xl font-bold tracking-tight md:text-6xl">
-              FAQs.
+              <SplitReveal text="FAQs." />
             </h2>
             <p className="mt-4 max-w-md text-muted-foreground">
               Everything you need to know about how we work. Still have a
