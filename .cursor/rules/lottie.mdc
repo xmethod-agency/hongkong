@@ -1,0 +1,55 @@
+---
+description: How to add and use Lottie animations in this project
+globs: ["src/**/*.tsx", "public/lottie/**"]
+alwaysApply: false
+---
+
+# Lottie animations
+
+## Library
+
+- Player: `@lottiefiles/dotlottie-react` (supports both `.lottie` and `.json`).
+- Wrapper component: `src/components/media/lottie.tsx` — ALWAYS use this, never import the player directly.
+- The wrapper is a client component (`"use client"`). Importing it from a Server Component is fine — Next.js handles the boundary.
+
+## Assets
+
+- Store animation files in `public/lottie/` and reference them as `/lottie/<name>.lottie` (preferred) or `/lottie/<name>.json`.
+- Prefer `.lottie` (dotLottie) — smaller, themable, multi-animation.
+- File names: kebab-case, descriptive (e.g. `hero-loop.lottie`, `success-check.lottie`).
+- Add an `aria-label` via parent or leave purely decorative (`aria-hidden`).
+
+## Finding animations (MCP)
+
+LottieFiles MCP is configured in `.cursor/mcp.json`. When the user needs an animation:
+
+1. Call `search_animations` with a clear query (e.g. "checkmark success", "data loading").
+2. Optionally `get_popular_animations` for browsing.
+3. Use `get_animation_details` to grab the download URL / preview.
+4. Download the asset into `public/lottie/` and reference via the `Lottie` wrapper.
+
+Do NOT hotlink from lottiefiles.com in production — download and self-host.
+
+## Usage pattern
+
+```tsx
+import { Lottie } from "@/components/media/lottie";
+
+export function HeroIllustration() {
+  return (
+    <Lottie
+      src="/lottie/hero-loop.lottie"
+      className="size-64 md:size-96"
+      aria-hidden
+    />
+  );
+}
+```
+
+## Rules
+
+- Size the wrapper with Tailwind (`size-*`, `w-*`, `h-*`, `aspect-*`). Never set width/height in px on the player.
+- Keep animations subtle on landings. No more than one hero-scale loop per viewport.
+- Respect `prefers-reduced-motion`: for non-essential motion, pass `autoplay={false}` when the user prefers reduced motion, or skip the animation.
+- Performance: keep individual files under ~200 KB. If bigger, compress via LottieFiles or split.
+- Accessibility: decorative animations get `aria-hidden`; meaningful ones get a parent with `role="img"` and `aria-label`.
