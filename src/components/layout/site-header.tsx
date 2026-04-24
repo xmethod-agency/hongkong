@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PillButton } from "@/components/pill-button";
 
@@ -15,9 +16,17 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5">
         <Link
           href="#home"
-          className="font-display text-xl font-bold tracking-tight"
+          aria-label="AIQO — home"
+          className="inline-flex items-center text-foreground"
         >
-          AIQO
+          <Image
+            src="/aiqo.svg"
+            alt="AIQO"
+            width={120}
+            height={34}
+            priority
+            className="h-7 w-auto md:h-9"
+          />
         </Link>
 
         <nav className="hidden items-center gap-2 lg:flex">
@@ -25,7 +34,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex h-10 items-center rounded-full bg-card px-4 text-xs font-semibold uppercase tracking-[0.14em] text-foreground shadow-[0_1px_0_rgba(0,0,0,0.04)] ring-1 ring-border/60 transition-colors hover:bg-foreground hover:text-background"
+              className="inline-flex h-10 items-center rounded-full bg-card/50 px-4 text-xs font-semibold uppercase tracking-[0.14em] text-foreground ring-1 ring-border/60 backdrop-blur-md supports-[backdrop-filter]:bg-card/40 transition-colors hover:bg-foreground hover:text-background hover:ring-foreground"
             >
               {item.label}
             </Link>

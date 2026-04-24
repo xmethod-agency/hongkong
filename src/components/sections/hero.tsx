@@ -10,9 +10,6 @@ export function Hero() {
             //
           </span>
           Available for projects
-          <span className="text-brand" aria-hidden>
-            //
-          </span>
         </span>
 
         <h1 className="mt-8 max-w-5xl font-display text-[56px] font-bold leading-[0.95] tracking-[-0.035em] text-foreground md:text-[96px] lg:text-[120px]">

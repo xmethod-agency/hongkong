@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Heart } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { PillButton } from "@/components/pill-button";
 
@@ -78,15 +79,71 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-16 border-t border-border pt-8">
-          <div className="font-display text-[clamp(4rem,12vw,11rem)] font-bold leading-none tracking-[-0.04em]">
-            AIQO
-          </div>
-          <div className="mt-6 flex flex-col justify-between gap-2 text-sm text-muted-foreground sm:flex-row">
-            <span>© {new Date().getFullYear()} AIQO — aiqotech.com</span>
-            <span>Built with Next.js, Tailwind & shadcn/ui.</span>
+        <div className="mt-16 border-t border-border pt-10">
+          <div className="grid gap-6 text-sm text-muted-foreground md:grid-cols-3">
+            <div>
+              <div className="text-xs uppercase tracking-[0.18em] text-foreground/80">
+                / Company
+              </div>
+              <p className="mt-3 leading-relaxed">
+                Viktorija Pte. Ltd.
+                <br />
+                Company Reg. No. 202617392D
+                <br />
+                Incorporated in the Republic of Singapore
+              </p>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-[0.18em] text-foreground/80">
+                / Contact
+              </div>
+              <p className="mt-3 leading-relaxed">
+                <a
+                  href="mailto:hello@aiqotech.com"
+                  className="transition-colors hover:text-foreground"
+                >
+                  hello@aiqotech.com
+                </a>
+                <br />
+                <a
+                  href="https://aiqotech.com"
+                  className="transition-colors hover:text-foreground"
+                >
+                  aiqotech.com
+                </a>
+              </p>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-[0.18em] text-foreground/80">
+                / Legal
+              </div>
+              <p className="mt-3 leading-relaxed">
+                © {new Date().getFullYear()} AIQO. All rights reserved.
+                <br />
+                All trademarks belong to their owners.
+              </p>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div className="relative w-full overflow-hidden">
+        <div
+          aria-hidden
+          className="pointer-events-none select-none px-[2vw] font-display text-[clamp(6rem,22vw,22rem)] font-bold leading-[0.85] tracking-[-0.04em] text-foreground"
+          style={{ letterSpacing: "-0.04em" }}
+        >
+          AIQO TECH
+        </div>
+      </div>
+
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 pb-8 pt-6 text-xs text-muted-foreground sm:flex-row">
+        <span>© {new Date().getFullYear()} AIQO — aiqotech.com</span>
+        <span className="inline-flex items-center gap-1.5">
+          Built with
+          <Heart className="size-3.5 fill-brand text-brand" aria-hidden />
+          in Hong Kong
+        </span>
       </div>
     </footer>
   );

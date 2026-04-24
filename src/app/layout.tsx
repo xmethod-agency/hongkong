@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Inter_Tight, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { CursorDot } from "@/components/cursor-dot";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
       className={`${inter.variable} ${interTight.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <CursorDot />
         {children}
       </body>
     </html>

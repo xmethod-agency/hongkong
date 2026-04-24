@@ -17,9 +17,6 @@ export function SectionLabel({ children, className }: SectionLabelProps) {
         //
       </span>
       <span>{children}</span>
-      <span className="text-brand" aria-hidden>
-        //
-      </span>
     </div>
   );
 }
