@@ -176,6 +176,20 @@
       scroll-behavior: auto;
     }
   }
+  /* Hide native cursor on fine-pointer devices; custom CursorDot takes over */
+  @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    html,
+    body,
+    a,
+    button,
+    [role="button"],
+    input,
+    textarea,
+    select,
+    label {
+      cursor: none !important;
+    }
+  }
 }
 
 /* Dotted pattern used on brand circle (nods to Formix) */

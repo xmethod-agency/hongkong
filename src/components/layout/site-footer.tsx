@@ -3,42 +3,23 @@ import { Heart } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { PillButton } from "@/components/pill-button";
 
-const columns = [
-  {
-    title: "/ Navigation",
-    links: [
-      { href: "#services", label: "Services" },
-      { href: "#benefits", label: "Benefits" },
-      { href: "#work", label: "Work" },
-      { href: "#pricing", label: "Pricing" },
-      { href: "#reviews", label: "Reviews" },
-      { href: "#faq", label: "FAQs" },
-    ],
-  },
-  {
-    title: "/ Resources",
-    links: [
-      { href: "#work", label: "All projects" },
-      { href: "#", label: "Privacy policy" },
-      { href: "#", label: "Terms of service" },
-      { href: "#", label: "404 page" },
-    ],
-  },
-  {
-    title: "/ Socials",
-    links: [
-      { href: "#", label: "X / Twitter" },
-      { href: "#", label: "LinkedIn" },
-      { href: "#", label: "YouTube" },
-    ],
-  },
+const navLinks = [
+  { href: "#services", label: "Services" },
+  { href: "#benefits", label: "Benefits" },
+  { href: "#work", label: "Work" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#reviews", label: "Reviews" },
+  { href: "#faq", label: "FAQs" },
+  { href: "#contact", label: "Contact" },
 ];
+
+const legalLinks = [{ href: "/privacy", label: "Privacy policy" }];
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/70 bg-surface">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_repeat(3,1fr)]">
+        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
           <div className="space-y-5">
             <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
               Newsletter
@@ -58,25 +39,41 @@ export function SiteFooter() {
             </form>
           </div>
 
-          {columns.map((col) => (
-            <div key={col.title} className="space-y-4">
-              <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                {col.title}
-              </div>
-              <ul className="space-y-2">
-                {col.links.map((l) => (
-                  <li key={l.label}>
-                    <Link
-                      href={l.href}
-                      className="text-sm transition-colors hover:text-brand"
-                    >
-                      {l.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          <div className="space-y-4">
+            <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              / Navigation
             </div>
-          ))}
+            <ul className="space-y-2">
+              {navLinks.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    href={l.href}
+                    className="text-sm transition-colors hover:text-brand"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              / Legal
+            </div>
+            <ul className="space-y-2">
+              {legalLinks.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    href={l.href}
+                    className="text-sm transition-colors hover:text-brand"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="mt-16 border-t border-border pt-10">
@@ -130,10 +127,10 @@ export function SiteFooter() {
       <div className="relative w-full overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none select-none px-[2vw] font-display text-[clamp(6rem,22vw,22rem)] font-bold leading-[0.85] tracking-[-0.04em] text-foreground"
-          style={{ letterSpacing: "-0.04em" }}
+          className="pointer-events-none block select-none whitespace-nowrap px-[2vw] font-display font-bold leading-[0.85] tracking-[-0.04em] text-foreground"
+          style={{ fontSize: "clamp(3rem, 17.5vw, 20rem)" }}
         >
-          AIQO TECH
+          <span className="text-brand">AI</span>QO TECH
         </div>
       </div>
 

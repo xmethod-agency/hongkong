@@ -21,10 +21,7 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
-          <PillButton href="#pricing" variant="primary">
-            See pricing
-          </PillButton>
-          <PillButton href="#contact" variant="outline">
+          <PillButton href="#contact" variant="primary">
             Get in touch
           </PillButton>
         </div>

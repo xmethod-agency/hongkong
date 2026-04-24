@@ -4,7 +4,6 @@ import { PillButton } from "@/components/pill-button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export function Contact() {
   return (
@@ -53,11 +52,16 @@ export function Contact() {
             </div>
           </div>
 
-          <form className="space-y-5 rounded-3xl border border-border bg-card p-6 md:p-8">
-            <div className="grid gap-5 sm:grid-cols-2">
+          <form className="space-y-6 rounded-3xl border border-border bg-card p-6 md:p-8">
+            <div className="grid gap-6 sm:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="name">Your name*</Label>
-                <Input id="name" placeholder="Jane Doe" required />
+                <Input
+                  id="name"
+                  placeholder="Jane Doe"
+                  required
+                  className="h-14 rounded-2xl px-4 text-base"
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">E-mail*</Label>
@@ -66,40 +70,18 @@ export function Contact() {
                   type="email"
                   placeholder="you@company.com"
                   required
+                  className="h-14 rounded-2xl px-4 text-base"
                 />
               </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="website">Website</Label>
-              <Input id="website" placeholder="yourcompany.com" />
-            </div>
-
-            <div className="space-y-3">
-              <Label>Engagement</Label>
-              <RadioGroup defaultValue="retainer" className="grid gap-2 sm:grid-cols-2">
-                {[
-                  { value: "retainer", label: "Engineering retainer" },
-                  { value: "project", label: "Single project" },
-                ].map((opt) => (
-                  <Label
-                    key={opt.value}
-                    htmlFor={opt.value}
-                    className="flex cursor-pointer items-center gap-3 rounded-2xl border border-border bg-background p-4 has-[[data-state=checked]]:border-foreground has-[[data-state=checked]]:bg-muted"
-                  >
-                    <RadioGroupItem id={opt.value} value={opt.value} />
-                    <span className="text-sm font-medium">{opt.label}</span>
-                  </Label>
-                ))}
-              </RadioGroup>
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="message">Message</Label>
               <Textarea
                 id="message"
-                rows={5}
+                rows={8}
                 placeholder="What are you building?"
+                className="min-h-[200px] rounded-2xl px-4 py-3 text-base"
               />
             </div>
 

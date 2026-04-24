@@ -23,9 +23,9 @@ export function SiteHeader() {
             src="/images/AIQO.svg"
             alt="AIQO"
             width={120}
-            height={34}
+            height={28}
             priority
-            className="h-7 w-auto md:h-9"
+            className="h-5 w-auto md:h-7"
           />
         </Link>
 
@@ -34,7 +34,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="inline-flex h-10 items-center rounded-full bg-card/50 px-4 text-xs font-semibold uppercase tracking-[0.14em] text-foreground ring-1 ring-border/60 backdrop-blur-md supports-[backdrop-filter]:bg-card/40 transition-colors hover:bg-foreground hover:text-background hover:ring-foreground"
+              className="inline-flex h-10 items-center rounded-full bg-background/30 px-4 text-xs font-semibold uppercase tracking-[0.14em] text-foreground backdrop-blur-[2px] supports-[backdrop-filter]:bg-background/20 transition-colors hover:bg-foreground hover:text-background"
             >
               {item.label}
             </Link>

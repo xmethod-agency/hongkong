@@ -24,7 +24,7 @@ const pillButtonVariants = cva(
 );
 
 const dotVariants = cva(
-  "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand text-brand-foreground",
+  "relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand",
   {
     variants: {
       size: {
@@ -35,6 +35,55 @@ const dotVariants = cva(
     defaultVariants: { size: "lg" },
   },
 );
+
+/**
+ * Dice faces. Indices 0..8 map to a 3×3 grid:
+ *   0 1 2
+ *   3 4 5
+ *   6 7 8
+ */
+const DICE_FACES: Record<number, number[]> = {
+  1: [4],
+  2: [0, 8],
+  3: [0, 4, 8],
+  4: [0, 2, 6, 8],
+  5: [0, 2, 4, 6, 8],
+  6: [0, 2, 3, 5, 6, 8],
+};
+
+type DiceFaceProps = {
+  idle?: keyof typeof DICE_FACES;
+  hover?: keyof typeof DICE_FACES;
+};
+
+function DiceFace({ idle = 5, hover = 3 }: DiceFaceProps) {
+  const idleDots = DICE_FACES[idle];
+  const hoverDots = DICE_FACES[hover];
+
+  return (
+    <span
+      aria-hidden
+      className="grid size-full grid-cols-3 grid-rows-3 place-items-center p-1.5"
+    >
+      {Array.from({ length: 9 }).map((_, i) => {
+        const showIdle = idleDots.includes(i);
+        const showHover = hoverDots.includes(i);
+        return (
+          <span
+            key={i}
+            className={cn(
+              "size-1 rounded-full bg-brand-foreground transition-opacity duration-300 ease-out",
+              showIdle && showHover && "opacity-100",
+              showIdle && !showHover && "opacity-100 group-hover/pill:opacity-0",
+              !showIdle && showHover && "opacity-0 group-hover/pill:opacity-100",
+              !showIdle && !showHover && "opacity-0",
+            )}
+          />
+        );
+      })}
+    </span>
+  );
+}
 
 type PillButtonBaseProps = VariantProps<typeof pillButtonVariants> & {
   children: React.ReactNode;
@@ -66,11 +115,13 @@ export function PillButton({
   const content = (
     <>
       <span className="pl-0.5">{children}</span>
-      <span aria-hidden className={dotClasses}>
-        <span
-          className="absolute inset-0 bg-dot-pattern text-brand-foreground/35"
-          style={{ backgroundSize: "6px 6px" }}
-        />
+      <span
+        className={cn(
+          dotClasses,
+          "transition-transform duration-500 group-hover/pill:rotate-[360deg]",
+        )}
+      >
+        <DiceFace idle={5} hover={3} />
       </span>
     </>
   );
