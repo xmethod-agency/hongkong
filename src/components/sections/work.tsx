@@ -61,7 +61,7 @@ export function Work() {
             <a
               key={project.title}
               href="#contact"
-              className="group relative flex aspect-square flex-col justify-between overflow-hidden rounded-3xl p-6 text-background"
+              className="group relative flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-3xl p-6 text-background"
             >
               <Image
                 src={project.image}
