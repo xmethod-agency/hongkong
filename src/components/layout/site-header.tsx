@@ -20,7 +20,7 @@ export function SiteHeader() {
           className="inline-flex items-center text-foreground"
         >
           <Image
-            src="/aiqo.svg"
+            src="/images/AIQO.svg"
             alt="AIQO"
             width={120}
             height={34}
