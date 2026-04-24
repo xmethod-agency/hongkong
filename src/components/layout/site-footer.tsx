@@ -80,10 +80,10 @@ export function SiteFooter() {
 
         <div className="mt-16 border-t border-border pt-8">
           <div className="font-display text-[clamp(4rem,12vw,11rem)] font-bold leading-none tracking-[-0.04em]">
-            Hong Kong
+            AIQO
           </div>
           <div className="mt-6 flex flex-col justify-between gap-2 text-sm text-muted-foreground sm:flex-row">
-            <span>© {new Date().getFullYear()} Hong Kong Agency.</span>
+            <span>© {new Date().getFullYear()} AIQO — aiqotech.com</span>
             <span>Built with Next.js, Tailwind & shadcn/ui.</span>
           </div>
         </div>

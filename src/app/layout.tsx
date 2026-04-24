@@ -19,9 +19,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hong Kong — Software, web, AI automation for growing teams",
+  metadataBase: new URL("https://aiqotech.com"),
+  title: "AIQO — Software, web, AI automation for growing teams",
   description:
-    "Hong Kong is a product studio building software, websites, AI automation, and providing IT consulting for modern businesses.",
+    "AIQO is a product studio building software, websites, AI automation, and providing IT consulting for modern businesses.",
 };
 
 export default function RootLayout({

@@ -20,7 +20,7 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
-          Hong Kong is a product studio that ships software, websites, and AI automation — with IT consulting baked in.
+          AIQO is a product studio that ships software, websites, and AI automation — with IT consulting baked in.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">

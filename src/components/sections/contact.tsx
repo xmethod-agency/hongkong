@@ -23,7 +23,7 @@ export function Contact() {
 
             <div className="mt-10 space-y-4">
               <a
-                href="mailto:hello@hongkong.agency"
+                href="mailto:hello@aiqotech.com"
                 className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4 transition-colors hover:border-foreground/20"
               >
                 <span className="flex size-11 items-center justify-center rounded-full bg-muted text-brand">
@@ -33,7 +33,7 @@ export function Contact() {
                   <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
                     / Chat to sales
                   </div>
-                  <div className="mt-1 font-medium">hello@hongkong.agency</div>
+                  <div className="mt-1 font-medium">hello@aiqotech.com</div>
                 </div>
               </a>
               <a

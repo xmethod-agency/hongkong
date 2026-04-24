@@ -17,7 +17,7 @@ export function SiteHeader() {
           href="#home"
           className="font-display text-xl font-bold tracking-tight"
         >
-          Hong Kong
+          AIQO
         </Link>
 
         <nav className="hidden items-center gap-2 lg:flex">
